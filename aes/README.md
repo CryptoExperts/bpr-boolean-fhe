@@ -1,0 +1,3 @@
+- The notebook `aes.ipynb` is the implementation of the algorithm that splits the s-box of AES into a graph of subcircuits. It output the file `results/total.txt` that gathers all the encodings for evaluating the subcircuits. They are sorted in the order they should be executed. This file is read by the Rust library. The set of operations executing the s-box designed by Boyar et al. can be found in `s_box.txt`. 
+
+- The folder `graph` contains the scripts that generates the circuit from the set of instructions. The folder `search` implements the deterministic algorithm of search of encodings (introduced in Section 4 of our paper). The folder `plots` contains some interesting plots of circuits. 
