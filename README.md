@@ -1,7 +1,7 @@
 This repository contains the code related to the paper **Optimized Homomorphic Evaluation of Boolean Functions**.
 
 
-- The folder `search_algorithm` contains the implementations of the deterministic search alogorithn of Section 4 of the paper (and the heuristic presented in Appendix). Also it contains the execution of these algorith;s on the crypto primitives we considered in Section 6.
+- The folder `search_algorithm` contains the implementations of the deterministic search algorithm of Section 4 of the paper (and the heuristic presented in Appendix). Also it contains the execution of these algorithms on the crypto primitives we considered in Section 6.
 
 - The folder `aes` contains the implementation of the algorithms presented in Section 5 splitting a Boolean circuits into evaluable Boolean functions. Also, these algorithms are applied to the use-case of AES presented at the end of the paper.
 
