@@ -31,7 +31,18 @@ def create_set_constraints(f ,l):
         while not abs(c[i]):
             i -= 1
         constraints[i].add(SuperTuple(c[:i + 1]))
+    # pretty_print(constraints)
     return constraints
+
+
+def pretty_print(constraints):
+    l = len(list(constraints.keys()))
+    m = []
+    for i, cons_i in constraints.items():
+        for c in cons_i:
+            m.append(list(c) + [0 for _ in range(l - i - 1)])
+    print(m)
+    print(np.array(m))
 
 
 # core searching algorithm
@@ -53,6 +64,8 @@ def build_next_set(inputs, constraints, p, symmetries=[]):
         forbidden_values.add(sum([ci * qi for ci, qi in zip(comb_lin, inputs)]) % p)
         if len(forbidden_values) == p:
             break
+    # print(f"Debug: c = {len(filtered_constraints)}; actual cuts : {len(forbidden_values) - 1};expected : {p-1-esperance_branches_survivantes(p, len(filtered_constraints))}")
+    # print(f"Debug : {forbidden_values}")
     return (x for x in range(p) if x not in forbidden_values)
 
 
@@ -73,13 +86,15 @@ def search(inputs, constraints, p, l, symmetries=[]):
         return False
 
 
+
 def full_search(f, l, max_p=31, symmetries=[]):
     constraints = create_set_constraints(f, l)
     for p in range(3, max_p, 2):
-        # print(f"p : {p}")
+        print(f"p:{p}")
         result = search([1], constraints, p, l, symmetries)
         if result:
             return result, p
+        
 
 
 
@@ -97,6 +112,5 @@ def get_final_encoding(f, l, q, p):
             F.add(ri)
     assert F.isdisjoint(T), f"{F} not disjoint of {T}"
     return F, T
-
 
 

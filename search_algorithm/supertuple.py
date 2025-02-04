@@ -21,7 +21,7 @@ class SuperTuple:
 
     def __hash__(self):
         return hash(self.data) ^ hash(self.negate())  #workaround to make sure that the negation is the same constraint
-    
+
     def __eq__(self, other):
         if not isinstance(other, SuperTuple):
             # only equality tests to other `structure` instances are supported

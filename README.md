@@ -2,4 +2,6 @@
 
 - The folder `aes` contains the implementation of the algorithms presented in Section 5 splitting a Boolean circuits into evaluable Boolean functions. Also, these algorithms are applied to the use-case of AES presented at the end of the paper.
 
-- The folder `implementations_crypto_primitives` contains our fork of the library `tfhe-rs` (https://github.com/zama-ai/tfhe-rs). It also contains the implementations we present in Section 6 of the paper.
+- The folder `implementations_crypto_primitives` contains our fork of the library `tfhe-rs` (https://github.com/zama-ai/tfhe-rs). We developed the module `src/gadget` to implement our framework.  It also contains the implementations we present in Section 6 of the paper.
+
+The necessary Python libraries to use the notebooks are specified in `requirements.txt`. It is recommended to use a virtual environment.
