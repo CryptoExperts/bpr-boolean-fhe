@@ -1,3 +1,0 @@
-The folder `tfhe-0.1.8` contains our fork of the `tfhe-rs` library. We developed the module `src/gadget` to implement our framework. The folder `implementations` gather all the implementations of the cryptographic primitives presented in the paper.
-
-To run the different implementations, comment/uncomment the lines in the `main` functions and run ``cargo run --release`` in the `implementations` folder.
